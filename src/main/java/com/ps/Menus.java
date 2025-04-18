@@ -28,25 +28,23 @@ public interface Menus {
             if (usercheckoutBookId == i + 1) {
                 books[i].setCheckedOutTo(checkoutUsername);
                 books[i].setisCheckedOut(true);
-
-
                 System.out.println("-----------------------------------------------------------------");
-                return ("You have checked out: " + books[i].getTitle());
-                return ("Your name is: " + books[i].getCheckedOutTo());
+                System.out.println("You have checked out: " + books[i].getTitle()+ "\nYour name is: " + books[i].getCheckedOutTo());
 
             }
+
         }
         return("Please try again!");
 
     }
 
-    public static String displayCheckedOutBooks(Book[] books){
+    public static String displayCheckedOutBooks(Book[] books) {
         System.out.println("-------------------------------------------------------------------");
         System.out.println("             Here is the list of Checked Out Books\n");
 
-        for(int i=0;i<books.length;i++){
-            if(books[i].getisCheckedOut()){
-                System.out.println(" Title: "+ books[i].getTitle() + "\t\t| ID: " + books[i].getId() + "\t\t| ISBN: " + books[i].getIsbn()+ "\t\t|Name: "+ books[i].getCheckedOutTo()+"\n");
+        for (int i = 0; i < books.length; i++) {
+            if (books[i].getisCheckedOut()) {
+                System.out.println(" Title: " + books[i].getTitle() + "\t\t| ID: " + books[i].getId() + "\t\t| ISBN: " + books[i].getIsbn() + "\t\t|Name: " + books[i].getCheckedOutTo() + "\n");
 
             }
         }
@@ -55,37 +53,24 @@ public interface Menus {
 
         char checkInBookInput = scanner.next().charAt(0);
 
-        if(checkInBookInput == 'C' || checkInBookInput == 'c')
-        {
+        if (checkInBookInput == 'C' || checkInBookInput == 'c') {
             System.out.println("Please enter the ID of the book you want to check in");
             int checkInBookId = scanner.nextInt();
 
-            for(int i =0; i < books.length;i++){
-                if(checkInBookId == books[i].getId()){
+            for (int i = 0; i < books.length; i++) {
+                if (checkInBookId == books[i].getId()) {
                     books[i].setisCheckedOut(false);
                     System.out.println("-------------------------------------------------");
                     System.out.println("You have checked in: " + books[i].getTitle());
                     System.out.println("-------------------------------------------------");
 
                 }
-                else if (checkInBookId=='x'|| checkInBookId=='X'){
-                    displayHomescreen();
-                }
-
-
-
-
-
-
             }
+        } else if (checkInBookInput == 'x' || checkInBookInput == 'X') {
+            displayHomescreen();
         }
-
-
-
-
-    }
-
-
+            return("Please try again!");
+    }}
 
 
 
@@ -102,4 +87,12 @@ public interface Menus {
 
 
 
-}
+
+
+
+
+
+
+
+
+

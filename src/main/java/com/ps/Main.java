@@ -3,7 +3,7 @@ package com.ps;
 
 import java.util.Scanner;
 
-public class Main extends Menus{
+public class Main implements Menus{
     static Scanner scanner = new Scanner(System.in);
     public static void displayHomescreen(){
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
